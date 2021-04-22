@@ -12,4 +12,15 @@ the unit test [EngineWithLDAPTest.java](./src/test/java/org/camunda/example/Engi
 The LDAP adapter has been added to the [pom.xml](./pom.xml) and configured in the [test configuration](./src/test/resources/camunda.cfg.xml).
 
 [ApacheDS](https://directory.apache.org/apacheds/) is used as directory sever. The organizational
-information fetched from it via LDAP is configured in [ldapConfig.ldif](./src/test/resources/ldapConfig.ldif) 
+information fetched from it via LDAP is configured in [ldapConfig.ldif](./src/test/resources/ldapConfig.ldif)
+
+References
+- https://docs.camunda.org/manual/latest/user-guide/process-engine/identity-service/  
+- https://directory.apache.org/apacheds/  
+- https://en.wikipedia.org/wiki/LDAP_Data_Interchange_Format
+- https://docs.camunda.org/manual/latest/user-guide/process-engine/authorization-service/  
+- https://docs.camunda.org/javadoc/camunda-bpm-platform/7.15/org/camunda/bpm/engine/AuthorizationService.html
+- https://docs.camunda.org/manual/latest/webapps/admin/authorization-management/#grant-permission-to-start-processes-from-tasklist
+
+
+

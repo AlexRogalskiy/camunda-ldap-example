@@ -1,4 +1,4 @@
-# Camunda Enterprise Azure Container Instance deployment
+# Camunda LDAP Integration and Authroizations
 
 This project shows
 - the usage of the Camunda LDAP adapter (org.camunda.bpm.identity:camunda-identity-ldap)

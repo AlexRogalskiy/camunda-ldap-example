@@ -1,4 +1,4 @@
-# Camunda LDAP Integration and Authroizations
+# Camunda LDAP Integration and Authorizations
 
 This project shows
 - the usage of the Camunda LDAP adapter (org.camunda.bpm.identity:camunda-identity-ldap)

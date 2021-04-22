@@ -1,0 +1,24 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+    <logger name="org.apache.ibatis" level="info" />
+    <logger name="javax.activation" level="info" />
+    <logger name="org.springframework" level="info" />
+
+    <logger name="org.camunda" level="info" />
+    <logger name="org.camunda.bpm.engine.persistence" level="warn" />
+    <logger name="org.camunda.bpm.engine.test" level="debug" />
+    <logger name="org.camunda.bpm.identity.impl.ldap.plugin" level="debug" />
+    <logger name="org.apache.directory" level="info" />
+    <logger name="org.apache.directory.api.ldap" level="warn" />
+    <logger name="org.apache.directory.api.ldap.model.ldif.LdifReader" level="warn" />
+</configuration>

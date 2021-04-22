@@ -1,0 +1,40 @@
+version: 1
+dn: dc=camunda,dc=org
+objectClass: domain
+objectClass: top
+dc: camunda
+
+dn: ou=Users,dc=camunda,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: Users
+
+dn: cn=BlackFrancis,ou=Users,dc=camunda,dc=org
+objectClass: inetOrgPerson
+objectclass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: BlackFrancis
+sn: Francis
+mail: bfrancis@camunda.com
+uid: bfrancis
+userPassword: rocks
+
+dn: ou=ThePixies,dc=camunda,dc=org
+objectClass: groupOfNames
+objectClass: top
+member: cn=BlackFrancis,ou=Users,dc=camunda,dc=org
+cn: ThePixies
+ou: ThePixies
+
+dn: cn=BobBuilder,ou=Users,dc=camunda,dc=org
+objectClass: inetOrgPerson
+objectclass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: BobBuilder
+sn: Builder
+mail: bobbuilder@camunda.com
+uid: bbuilder
+userPassword: bb
+

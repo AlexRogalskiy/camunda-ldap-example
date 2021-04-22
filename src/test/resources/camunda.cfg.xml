@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="processEngineConfiguration"
+          class="org.camunda.bpm.engine.impl.cfg.StandaloneInMemProcessEngineConfiguration">
+        <property name="history" value="full"/>
+        <property name="expressionManager">
+            <bean class="org.camunda.bpm.engine.test.mock.MockExpressionManager"/>
+        </property>
+        <property name="processEnginePlugins">
+            <list>
+                <!--https://docs.camunda.org/manual/latest/user-guide/process-engine/identity-service/-->
+                <bean id="ldapIdentityProviderPlugin"
+                      class="org.camunda.bpm.identity.impl.ldap.plugin.LdapIdentityProviderPlugin">
+                    <property name="serverUrl" value="ldap://localhost:3433/"/>
+                    <property name="managerDn" value="cn=BlackFrancis,ou=Users,dc=camunda,dc=org"/>
+                    <property name="managerPassword" value="rocks"/>
+                    <property name="baseDn" value="dc=camunda,dc=org"/>
+
+                    <property name="userSearchBase" value=""/>
+                    <property name="userSearchFilter" value="(objectclass=person)"/>
+                    <property name="userIdAttribute" value="uid"/>
+                    <property name="userFirstnameAttribute" value="cn"/>
+                    <property name="userLastnameAttribute" value="sn"/>
+                    <property name="userEmailAttribute" value="mail"/>
+                    <property name="userPasswordAttribute" value="userPassword"/>
+
+                    <property name="groupSearchBase" value=""/>
+                    <property name="groupSearchFilter" value="(objectclass=groupOfNames)"/>
+                    <property name="groupIdAttribute" value="ou"/>
+                    <property name="groupNameAttribute" value="cn"/>
+                    <property name="groupMemberAttribute" value="member"/>
+
+                    <property name="authorizationCheckEnabled" value="false"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+</beans>
